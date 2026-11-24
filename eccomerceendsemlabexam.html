@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>E-Commerce Website</title>
+
+    <style>
+        body {
+            background-color: lightblue;
+            text-align: center;
+            font-family: Arial;
+        }
+
+        .product {
+            background-color: white;
+            display: inline-block;
+            padding: 20px;
+            margin: 15px;
+            border-radius: 10px;
+        }
+
+        button {
+            background-color: blue;
+            color: white;
+            padding: 10px;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>My E-Commerce Store</h1>
+
+    <div class="product">
+        <h2>Mobile</h2>
+        <p>Price: ₹15000</p>
+        <button onclick="addCart('Mobile',15000)">Add to Cart</button>
+    </div>
+
+    <div class="product">
+        <h2>Laptop</h2>
+        <p>Price: ₹45000</p>
+        <button onclick="addCart('Laptop',45000)">Add to Cart</button>
+    </div>
+
+    <div class="product">
+        <h2>Headphones</h2>
+        <p>Price: ₹1000</p>
+        <button onclick="addCart('Headphones',1000)">Add to Cart</button>
+    </div>
+
+    <h2>Shopping Cart</h2>
+
+    <p id="cart"></p>
+    <h3 id="total">Total: ₹0</h3>
+
+    <script>
+        let total = 0;
+
+        function addCart(name, price) {
+            total = total + price;
+
+            document.getElementById("cart").innerHTML +=
+                name + " - ₹" + price + "<br>";
+
+            document.getElementById("total").innerHTML =
+                "Total: ₹" + total;
+        }
+    </script>
+
+</body>
+</html>
